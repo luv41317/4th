@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>작은 거인님 4주년</title>
+    <style>
+      @font-face {
+        font-family: 'NanumSquare';
+        src: url('fonts/NanumSquareOTF_acR.otf') format('opentype');
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        overflow: hidden; /* 스크롤 방지 */
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; /* 세로 중앙 정렬 */
+        height: 100vh;
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+        background: #533b4d;
+        color: white;
+        font-family: 'NanumSquare', Arial, sans-serif;
+        position: relative; /* 배경 원 절대 위치 기준 */
+        overflow: hidden; /* 원이 삐져나가는 것 숨김 */
+      }
+
+      .content-wrapper {
+        width: 100%;
+        max-width: 500px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        z-index: 1;
+        padding: 20px;
+      }
+
+      .middle-img {
+        width: 100%;
+        max-width: 450px;
+        height: auto;
+        margin-bottom: 30px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* 배경 원 공통 */
+      body::before,
+      body::after {
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      /* 왼쪽 아래 원: 1.3배, rgba(250, 227, 198) */
+      body::before {
+        width: 520px;
+        height: 520px;
+        left: -200px;
+        bottom: -200px;
+        background: radial-gradient(
+          circle,
+          rgba(250, 227, 198, 1) 0%,
+          rgba(250, 227, 198, 0) 70%
+        );
+      }
+
+      /* 오른쪽 위 원: 1.8배, #faa4bd */
+      body::after {
+        width: 720px;
+        height: 720px;
+        right: -300px;
+        top: -250px;
+        background: radial-gradient(
+          circle,
+          rgba(250, 164, 189, 1) 0%,
+          rgba(250, 164, 189, 0) 70%
+        );
+      }
+
+      .top-text1,
+      .top-text2,
+      .bottom-text1,
+      .bottom-text2 {
+        font-weight: 900;
+        font-size: 2rem;
+        color: #533b4d;
+        text-shadow: 0 0 1px rgba(250, 227, 198, 0.8),
+          0 0 2px rgba(250, 227, 198, 0.8), 0 0 4px rgba(250, 227, 198, 0.8),
+          0 0 6px #faa4bd, 0 0 8px #faa4bd, 0 0 10px #faa4bd, 0 0 12px #faa4bd;
+        margin: 0;
+      }
+
+      .top-text1 {
+        margin-top: 10px; /* 👈 이 줄 추가 */
+        margin-bottom: 0px;
+      }
+
+      .top-text2 {
+        margin-bottom: 30px;
+      }
+
+      .bottom-text1,
+      .bottom-text2 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+      }
+
+      button {
+        font-size: 18px;
+        padding: 12px 24px;
+        margin-top: 20px;
+        background-color: #faa4bd;
+        color: #333;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: rgba(250, 227, 198);
+      }
+
+      .background-images {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 0.5;
+        pointer-events: none;
+      }
+
+      .bg-img {
+        position: absolute;
+        opacity: 0.7;
+        animation: float 6s ease-in-out infinite;
+      }
+
+      /* 이미지 개별 위치 조정 */
+      .balloon {
+        width: 156px; /* 120 * 1.3 */
+        top: 10%;
+        left: 5%;
+        animation-delay: 0s;
+      }
+
+      .heart1 {
+        width: 78px; /* 60 * 1.3 */
+        top: 20%;
+        right: 10%;
+        animation-delay: 1s;
+      }
+
+      .heart2 {
+        width: 65px; /* 50 * 1.3 */
+        bottom: 15%;
+        left: 10%;
+        animation-delay: 2s;
+      }
+
+      .heart3 {
+        width: 91px; /* 70 * 1.3 */
+        bottom: 10%;
+        right: 5%;
+        animation-delay: 3s;
+      }
+
+      .heart4 {
+        width: 71.5px; /* 55 * 1.3 */
+        top: 35%;
+        left: 40%;
+        animation-delay: 4s;
+      }
+
+      /* 둥실둥실 떠다니는 애니메이션 */
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      .shooting-stars {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        overflow: hidden;
+        z-index: 1; /* content-wrapper 위, 이미지 아래 */
+      }
+
+      .star {
+        position: absolute;
+        width: 2px;
+        height: 60px;
+        opacity: 0.8;
+        animation: fall 3s linear infinite;
+      }
+
+      .star.pink {
+        background: #f564a9;
+        left: 10%;
+        animation-delay: 0s;
+      }
+
+      .star.rose {
+        background: #faa4bd;
+        left: 30%;
+        animation-delay: 1s;
+      }
+
+      .star.cream {
+        background: #fae3c6;
+        left: 50%;
+        animation-delay: 2s;
+      }
+
+      /* 추가 별들 위치 변경 */
+      .star:nth-child(4) {
+        left: 70%;
+        animation-delay: 0.5s;
+      }
+
+      .star:nth-child(5) {
+        left: 20%;
+        animation-delay: 1.5s;
+      }
+
+      .star:nth-child(6) {
+        left: 80%;
+        animation-delay: 2.5s;
+      }
+
+      .star:nth-child(7) {
+        left: 40%;
+        animation-delay: 0.8s;
+      }
+
+      .star:nth-child(8) {
+        left: 60%;
+        animation-delay: 1.8s;
+      }
+
+      @keyframes fall {
+        0% {
+          top: -80px;
+          opacity: 0.8;
+          transform: translateX(0);
+        }
+        100% {
+          top: 110%;
+          opacity: 0;
+          transform: translateX(10px);
+        }
+      }
+
+      /* 반응형 작업 시작 */
+      @media (max-width: 768px) {
+        .content-wrapper {
+          padding: 16px;
+          max-width: 100%;
+        }
+
+        .middle-img {
+          max-width: 300px;
+          margin-bottom: 20px;
+        }
+
+        .top-text1,
+        .top-text2 {
+          font-size: 1.5rem;
+          line-height: 1.4;
+        }
+
+        .bottom-text1,
+        .bottom-text2 {
+          font-size: 1.2rem;
+          line-height: 1.4;
+          margin-bottom: 16px;
+        }
+
+        button {
+          font-size: 16px;
+          padding: 10px 20px;
+        }
+
+        .balloon {
+          width: 120px;
+          top: 8%;
+          left: 3%;
+        }
+
+        .heart1 {
+          width: 60px;
+          top: 18%;
+          right: 8%;
+        }
+
+        .heart2 {
+          width: 50px;
+          bottom: 12%;
+          left: 8%;
+        }
+
+        .heart3 {
+          width: 70px;
+          bottom: 8%;
+          right: 4%;
+        }
+
+        .heart4 {
+          width: 55px;
+          top: 32%;
+          left: 35%;
+        }
+
+        body::before {
+          width: 400px;
+          height: 400px;
+          left: -150px;
+          bottom: -150px;
+        }
+
+        body::after {
+          width: 600px;
+          height: 600px;
+          right: -250px;
+          top: -200px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .top-text1,
+        .top-text2 {
+          font-size: 1.3rem;
+        }
+
+        .bottom-text1,
+        .bottom-text2 {
+          font-size: 1rem;
+        }
+
+        button {
+          font-size: 14px;
+          padding: 8px 16px;
+        }
+
+        .middle-img {
+          max-width: 240px;
+        }
+
+        .balloon {
+          width: 100px;
+        }
+
+        .heart1,
+        .heart2,
+        .heart3,
+        .heart4 {
+          opacity: 0.6;
+        }
+      }
+      /* 반응형 작업 끝 */
+    </style>
+  </head>
+  <body>
+    <div class="content-wrapper">
+      <div class="top-text1">작은 거인님, 07월 29일</div>
+      <div class="top-text2">4주년을 축하해요.</div>
+
+      <img class="middle-img" src="images/cake.png" alt="케이크 이미지" />
+
+      <div class="bottom-text1">소중한 이들을 떠올리며</div>
+      <div class="bottom-text2">아래 버튼을 눌러 주세요.</div>
+
+      <button onclick="goToMain()">편지 보러 가기</button>
+    </div>
+
+    <!-- body 안에 추가 -->
+    <div class="background-images">
+      <img src="images/balloon.png" class="bg-img balloon" alt="balloon" />
+      <img src="images/heart1.png" class="bg-img heart heart1" alt="heart1" />
+      <img src="images/heart2.png" class="bg-img heart heart2" alt="heart2" />
+      <img src="images/heart3.png" class="bg-img heart heart3" alt="heart3" />
+      <img src="images/heart4.png" class="bg-img heart heart4" alt="heart4" />
+    </div>
+
+    <script>
+      function goToMain() {
+        const today = new Date();
+        const openDate = new Date('2025-07-29T00:00:00');
+        if (today >= openDate) {
+          window.location.href = 'main.html';
+        } else {
+          alert('편지는 2025년 7월 29일부터 열람 가능합니다.');
+        }
+      }
+    </script>
+  </body>
+  <!-- 별똥별 배경 -->
+  <div class="shooting-stars">
+    <div class="star pink small"></div>
+    <div class="star rose medium"></div>
+    <div class="star cream large"></div>
+    <div class="star pink medium"></div>
+    <div class="star rose small"></div>
+    <div class="star cream large"></div>
+    <div class="star pink large"></div>
+    <div class="star rose medium"></div>
+  </div>
+</html>
