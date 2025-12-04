@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1" >
     <title>작은 거인님, 07월 29일, 4주년을 축하해요.</title>
     <style>
-                  @font-face {
-                    font-family: 'NanumSquare';
-                    src: url('fonts/NanumSquareOTF_acR.otf') format('opentype');
-                    font-weight: normal;
-                    font-style: normal;
+            @font-face {
+              font-family: 'NanumSquare';
+              src: url('fonts/NanumSquareOTF_acR.otf') format('opentype');
+              font-weight: normal;
+              font-style: normal;
                   }
 
-                  body::before,
+            body::before,
             body::after {
               content: '';
               position: absolute;
@@ -21,7 +21,6 @@
               pointer-events: none;
             }
 
-            /* 왼쪽 아래 원: 1.3배, rgba(250, 227, 198) */
             body::before {
               width: 520px;
               height: 520px;
@@ -34,7 +33,6 @@
               );
             }
 
-            /* 오른쪽 위 원: 1.8배, #faa4bd */
             body::after {
               width: 720px;
               height: 720px;
@@ -65,7 +63,6 @@
               animation: float 6s ease-in-out infinite;
             }
 
-            /* 이미지 위치와 크기 */
             .balloon {
               width: 156px;
               top: 10%;
@@ -101,7 +98,6 @@
               animation-delay: 4s;
             }
 
-            /* 둥실둥실 애니메이션 */
             @keyframes float {
               0% {
                 transform: translateY(0px);
@@ -133,7 +129,6 @@
               animation: fall 3s linear infinite;
             }
 
-            /* 색상 및 위치 */
             .star.pink {
               background: #f564a9;
               left: 10%;
@@ -152,14 +147,12 @@
               animation-delay: 2s;
             }
 
-            /* 추가 별 위치 및 delay */
             .star:nth-child(4) { left: 70%; animation-delay: 0.5s; }
             .star:nth-child(5) { left: 20%; animation-delay: 1.5s; }
             .star:nth-child(6) { left: 80%; animation-delay: 2.5s; }
             .star:nth-child(7) { left: 40%; animation-delay: 0.8s; }
             .star:nth-child(8) { left: 60%; animation-delay: 1.8s; }
 
-            /* 별똥별 애니메이션 */
             @keyframes fall {
               0% {
                 top: -80px;
@@ -173,301 +166,297 @@
               }
             }
 
-                  html,
-                  body {
-                    weight: 100%
-                    height: 100%;
-                  }
+            html, body {
+              weight: 100%
+              height: 100%;
+            }
 
-                  body {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center; /* 전체 가로 중앙 정렬 */
-                    justify-content: center; /* 위쪽부터 쌓이게 */
-                    height: 100vh;
-                    margin: 0;
-                    padding: 0;
-                    padding-top: 40px;
-                    position: relative;
-                    overflow: hidden;
-                    background: #533b4d;
-                    color: white;
-                    font-family: 'NanumSquare', Arial, sans-serif;
-                  }
+            body {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                margin: 0;
+                padding: 0;
+                padding-top: 40px;
+                position: relative;
+                overflow: hidden;
+                background: #533b4d;
+                color: white;
+                font-family: 'NanumSquare', Arial, sans-serif;
+              }
 
-                  h1 {
-                    margin: 0;
-                    font-weight: 900; /* 글씨 두껍게 */
-                    font-size: 2rem;
-                    color: #533b4d;
-                    text-shadow: 0 0 1px rgba(250, 227, 198, 0.8),
+            h1 {
+                margin: 0;
+                font-weight: 900;
+                font-size: 2rem;
+                color: #533b4d;
+                text-shadow: 0 0 1px rgba(250, 227, 198, 0.8),
                       0 0 2px rgba(250, 227, 198, 0.8), 0 0 4px rgba(250, 227, 198, 0.8),
                       0 0 6px #faa4bd, 0 0 8px #faa4bd, 0 0 10px #faa4bd, 0 0 12px #faa4bd;
-                    margin-bottom: 0px; /* 기존 40px에서 줄임 */
-                  }
+                margin-bottom: 0px;
+            }
 
-                  h1:last-of-type {
-                    margin-bottom: 0px; /* 기존 40px에서 줄임 */
-                  }
+            h1:last-of-type {
+                margin-bottom: 0px; /* 기존 40px에서 줄임 */
+            }
 
-                  .card-wrapper {
-                    position: relative; /* 추가 */
-                    flex-grow: 1; /* 남은 공간 다 차지하게 */
-                    display: flex; /* 내부를 flex 박스로 */
-                    justify-content: center; /* 가로 가운데 정렬 */
-                    align-items: center; /* 세로 가운데 정렬 */
-                    width: 100%; /* 가로 꽉 채우기 */
-                    height: calc(100vh - 80px);
-                    perspective: 2000px;
-                    margin-top: 0; /* 혹은 원하는 만큼 줄임 */
-                    padding-top: 0;
-                  }
+            .card-wrapper {
+                position: relative;
+                flex-grow: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: calc(100vh - 80px);
+                perspective: 2000px;
+                margin-top: 0;
+                padding-top: 0;
+            }
 
-                  .card-container {
-                    position: relative; /* position relative로 자식 절대위치 기준 */
-                    width: 280px;
-                    height: 360px;
-                    margin: 40px 0;
-                    cursor: pointer;
-                    transform-style: preserve-3d; /* 3D 변환 허용 */
-                    transition: transform 0.8s;
-                  }
+            .card-container {
+                position: relative;
+                width: 280px;
+                height: 360px;
+                margin: 40px 0;
+                cursor: pointer;
+                transform-style: preserve-3d
+                transition: transform 0.8s;
+            }
 
-                  /* 카드 앞면/뒷면을 감싸는 부모 */
-                  .card-inner {
-                    width: 280px;
-                    height: 360px;
-                    position: absolute;
-                    border-radius: 20px;
-                    transform-style: preserve-3d;
-                    transition: transform 0.8s;
-                    cursor: pointer;
-                    box-shadow: 0 0 10px #fff, 0 0 20px #ff7eb3, 0 0 30px #ff7eb3,
+            .card-inner {
+                width: 280px;
+                height: 360px;
+                position: absolute;
+                border-radius: 20px;
+                transform-style: preserve-3d;
+                transition: transform 0.8s;
+                cursor: pointer;
+                box-shadow: 0 0 10px #fff, 0 0 20px #ff7eb3, 0 0 30px #ff7eb3,
                       0 0 40px #ff2f92;
-                    background: rgba(250, 164, 189, 0.8);
-                    color: white;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    padding: 20px;
-                    box-sizing: border-box;
-                  }
+                background: rgba(250, 164, 189, 0.8);
+                color: white;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 20px;
+                box-sizing: border-box;
+            }
 
-                  .card-front,
-                  .card-back {
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    border-radius: 20px;
-                    backface-visibility: hidden;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    padding: 20px;
-                    box-sizing: border-box;
-                  }
+            .card-front,
+            .card-back {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                border-radius: 20px;
+                backface-visibility: hidden;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 20px;
+                box-sizing: border-box;
+            }
 
-                  .card-front {
-                    background: rgba(250, 164, 189, 0.8);
-                    color: #533b4d;
-                  }
+            .card-front {
+                background: rgba(250, 164, 189, 0.8);
+                color: #533b4d;
+            }
 
-                  .card-back {
-                    height: 100%; /* 카드 높이와 같게 */
-                    display: flex;
-                    flex-direction: column;
-                    padding: 20px;
-                    box-sizing: border-box;
-                    background: rgba(250, 227, 198, 0.8);
-                    color: #533b4d;
-                    transform: rotateY(180deg);
-                    font-size: 0.7rem;
-                  }
+            .card-back {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                padding: 20px;
+                box-sizing: border-box;
+                background: rgba(250, 227, 198, 0.8);
+                color: #533b4d;
+                transform: rotateY(180deg);
+                font-size: 0.7rem;
+              }
 
-                  .face-img {
-                    width: 200px;
-                    height: 200px;
-                    border-radius: 50%;
-                    object-fit: cover;
-                    margin-bottom: 12px;
-                    box-shadow: 0 0 10px #ffafd3;
-                  }
+            .face-img {
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                object-fit: cover;
+                margin-bottom: 12px;
+                box-shadow: 0 0 10px #ffafd3;
+            }
 
-                  .card-front h2 {
-                    margin: 0;
-                    text-shadow: 0 0 2px #fff, 0 0 5px #ff73b9, 0 0 7px #ff4fa3;
-                  }
+            .card-front h2 {
+                margin: 0;
+                text-shadow: 0 0 2px #fff, 0 0 5px #ff73b9, 0 0 7px #ff4fa3;
+            }
+      
+            .card-back p {
+                flex-grow: 0;
+                overflow-y: auto;
+                margin: 0;
+                line-height: 1.5;
+                white-space: pre-wrap;
+                scrollbar-width: thin;
+                scrollbar-color: rgba(83, 59, 77, 0.6) transparent;
+            }
 
-                  .card-back p {
-                    flex-grow: 0;
-                    overflow-y: auto;
-                    margin: 0;
-                    line-height: 1.5;
-                    white-space: pre-wrap;
-                    scrollbar-width: thin; /* 파이어폭스용 얇은 스크롤바 */
-                    scrollbar-color: rgba(83, 59, 77, 0.6) transparent; /* 파이어폭스용 색상 */
-                  }
+            .carousel {
+                position: relative;
+                width: 280px;
+                height: 360px;
+                margin-top: 40px;
+                perspective: 1000px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
 
-                  /* 아래는 기존 carousel 스타일인데 필요하면 유지하세요 */
-                  .carousel {
-                    position: relative;
-                    width: 280px;
-                    height: 360px;
-                    margin-top: 40px;
-                    perspective: 1000px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                  }
-
-                  .carousel__card {
-                    position: absolute;
-                    width: 280px;
-                    height: 360px;
-                    perspective: 1000px;
-                    border-radius: 20px;
-                    background: rgba(250, 164, 189, 0.8);
-                    box-shadow: 0 0 10px #fff, 0 0 20px #ff7eb3, 0 0 30px #ff7eb3,
+            .carousel__card {
+              position: absolute;
+              width: 280px;
+              height: 360px;
+              perspective: 1000px;
+              border-radius: 20px;
+              background: rgba(250, 164, 189, 0.8);
+              box-shadow: 0 0 10px #fff, 0 0 20px #ff7eb3, 0 0 30px #ff7eb3,
                       0 0 40px #ff2f92;
-                    color: white;
-                    backface-visibility: hidden;
-                    transform-style: preserve-3d;
-                    transition: transform 0.8s;
-                    transform-origin: center center;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    text-align: center;
-                    padding: 20px;
-                    box-sizing: border-box;
-                  }
-
-                  /* 반응형: 태블릿 이하 */
-      @media (max-width: 768px) {
-        h1 {
-          font-size: 1.5rem;
-        }
-
-        .card-wrapper {
-          flex-direction: column;
-          padding: 20px 0;
-        }
-
-        .card-container,
-        .carousel__card,
-        .card-inner {
-          width: 220px;
-          height: 300px;
-        }
-
-        .card-front,
-        .card-back {
-          padding: 16px;
-        }
-
-        .card-back {
-          font-size: 0.65rem;
-        }
-
-        .face-img {
-          width: 150px;
-          height: 150px;
-        }
-
-        .balloon {
-          width: 120px;
-          top: 8%;
-          left: 3%;
-        }
-
-        .heart1 {
-          width: 60px;
-          top: 18%;
-          right: 8%;
-        }
-
-        .heart2 {
-          width: 50px;
-          bottom: 12%;
-          left: 8%;
-        }
-
-        .heart3 {
-          width: 70px;
-          bottom: 8%;
-          right: 4%;
-        }
-
-        .heart4 {
-          width: 55px;
-          top: 32%;
-          left: 35%;
-        }
-
-        body::before {
-          width: 400px;
-          height: 400px;
-          left: -150px;
-          bottom: -150px;
-        }
-
-        body::after {
-          width: 600px;
-          height: 600px;
-          right: -250px;
-          top: -200px;
-        }
-      }
-
-      /* 반응형: 모바일 (작은 화면) */
-      @media (max-width: 480px) {
-        h1 {
-          font-size: 1.3rem;
-        }
-
-        .card-container,
-        .carousel__card,
-        .card-inner {
-          width: 180px;
-          height: 260px;
-        }
-
-        .card-back {
-          font-size: 0.6rem;
-        }
-
-        .face-img {
-          width: 120px;
-          height: 120px;
-        }
-
-        .balloon {
-          width: 100px;
-        }
-
-        .heart1,
-        .heart2,
-        .heart3,
-        .heart4 {
-          opacity: 0.6;
-        }
-
-        body::before {
-          width: 320px;
-          height: 320px;
-          left: -120px;
-          bottom: -120px;
-        }
-
-        body::after {
-          width: 500px;
-          height: 500px;
-          right: -200px;
-          top: -180px;
-        }
+              color: white;
+              backface-visibility: hidden;
+              transform-style: preserve-3d;
+              transition: transform 0.8s;
+              transform-origin: center center;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              text-align: center;
+              padding: 20px;
+              box-sizing: border-box;
+            }
+      
+            @media (max-width: 768px) {
+              h1 {
+                font-size: 1.5rem;
+              }
+      
+              .card-wrapper {
+                flex-direction: column;
+                padding: 20px 0;
+              }
+      
+              .card-container,
+              .carousel__card,
+              .card-inner {
+                width: 220px;
+                height: 300px;
+              }
+      
+              .card-front,
+              .card-back {
+                padding: 16px;
+              }
+      
+              .card-back {
+                font-size: 0.65rem;
+              }
+      
+              .face-img {
+                width: 150px;
+                height: 150px;
+              }
+      
+              .balloon {
+                width: 120px;
+                top: 8%;
+                left: 3%;
+              }
+      
+              .heart1 {
+                width: 60px;
+                top: 18%;
+                right: 8%;
+              }
+      
+              .heart2 {
+                width: 50px;
+                bottom: 12%;
+                left: 8%;
+              }
+      
+              .heart3 {
+                width: 70px;
+                bottom: 8%;
+                right: 4%;
+              }
+      
+              .heart4 {
+                width: 55px;
+                top: 32%;
+                left: 35%;
+              }
+      
+              body::before {
+                width: 400px;
+                height: 400px;
+                left: -150px;
+                bottom: -150px;
+              }
+      
+              body::after {
+                width: 600px;
+                height: 600px;
+                right: -250px;
+                top: -200px;
+              }
+            }
+      
+            /* 반응형: 모바일 (작은 화면) */
+            @media (max-width: 480px) {
+              h1 {
+                font-size: 1.3rem;
+              }
+      
+              .card-container,
+              .carousel__card,
+              .card-inner {
+                width: 180px;
+                height: 260px;
+              }
+      
+              .card-back {
+                font-size: 0.6rem;
+              }
+      
+              .face-img {
+                width: 120px;
+                height: 120px;
+              }
+      
+              .balloon {
+                width: 100px;
+              }
+      
+              .heart1,
+              .heart2,
+              .heart3,
+              .heart4 {
+                opacity: 0.6;
+              }
+      
+              body::before {
+                width: 320px;
+                height: 320px;
+                left: -120px;
+                bottom: -120px;
+              }
+      
+              body::after {
+                width: 500px;
+                height: 500px;
+                right: -200px;
+                top: -180px;
+              }
       }
     </style>
   </head>
@@ -475,7 +464,6 @@
     <h1>작은 거인님, 07월 29일,</h1>
     <h1>4주년을 축하해요.</h1>
 
-    <!-- 🎈 둥실둥실 떠다니는 이미지들 -->
     <div class="background-images">
       <img src="images/balloon.png" class="bg-img balloon" alt="balloon" />
       <img src="images/heart1.png" class="bg-img heart heart1" alt="heart1" />
@@ -484,7 +472,6 @@
       <img src="images/heart4.png" class="bg-img heart heart4" alt="heart4" />
     </div>
 
-    <!-- 🌠 별똥별 효과 -->
     <div class="shooting-stars">
       <div class="star pink small"></div>
       <div class="star rose medium"></div>
@@ -498,7 +485,6 @@
 
     <div class="card-wrapper">
       <div class="card-container" id="cardContainer">
-        <!-- JS가 카드 front/back을 이곳에 삽입 -->
       </div>
     </div>
 
@@ -635,18 +621,16 @@
       ];
 
       const cardCount = cardsData.length;
-      const radius = 980; // 카루셀 반지름 (필요하면 조정)
+      const radius = 980;
       const containerTranslateZ = 3000;
 
-      let angle = 0; // 전체 카루셀 현재 회전 각도
-      let frontIndex = 0; // 현재 맨 앞에 있는 카드 인덱스
+      let angle = 0; 
+      let frontIndex = 0; 
 
-      // cardContainer에 perspective 추가
-      cardContainer.style.perspective = '2000px'; // 충분히 크게!
+      cardContainer.style.perspective = '2000px';
 
-      const cardElements = []; // 카드 DOM을 모아둘 배열
+      const cardElements = [];
 
-      // 뒤집힌 카드 인덱스 저장 변수 (앞 카드에 대해서만 허용)
       let flippedIndex = -1;
 
       function rotateCarousel() {
@@ -654,19 +638,15 @@
         cardContainer.style.transform = `translateZ(-${containerTranslateZ}px)`;
 
         cardElements.forEach((card, i) => {
-          // i번째 카드가 frontIndex 기준으로 얼마나 떨어져있는지 계산
           let diffIndex = i - frontIndex;
 
-          // 원형 배열이므로 범위를 -cardCount/2 ~ +cardCount/2 로 맞춤
           if (diffIndex > cardCount / 2) diffIndex -= cardCount;
           else if (diffIndex < -cardCount / 2) diffIndex += cardCount;
 
-          // 각 카드의 회전 각도
           const theta = (360 / cardCount) * diffIndex;
 
           let baseTransform = `rotateY(${theta}deg) translateZ(${radius}px)`;
 
-          // 앞 카드가 뒤집혔으면 180도 더 회전
           if (i === flippedIndex) {
             baseTransform += ' rotateY(180deg)';
           }
@@ -675,7 +655,6 @@
         });
       }
 
-      // 카드 생성 및 이벤트
       cardsData.forEach((msg, index) => {
         const cardInner = document.createElement('div');
         cardInner.className = 'card-inner';
@@ -704,7 +683,6 @@
         cardInner.appendChild(front);
         cardInner.appendChild(back);
 
-        // 클릭 이벤트: 앞 카드면 뒤집기, 아니면 회전
         cardInner.addEventListener('click', () => {
           if (index === frontIndex) {
             flippedIndex = flippedIndex === index ? -1 : index;
@@ -718,13 +696,12 @@
         cardElements.push(cardInner);
         cardContainer.appendChild(cardInner);
 
-        // 초기 위치 세팅
         const theta = (360 / cardCount) * index;
         cardInner.style.transform = `rotateY(${theta}deg) translateZ(${radius}px)`;
       });
 
-      // 초기 회전 세팅
       rotateCarousel();
     </script>
   </body>
 </html>
+
