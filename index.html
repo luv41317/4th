@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1" >
     <title>작은 거인님 4주년</title>
     <style>
       @font-face {
@@ -17,14 +17,14 @@
         margin: 0;
         padding: 0;
         height: 100vh;
-        overflow: hidden; /* 스크롤 방지 */
+        overflow: hidden;
       }
 
       body {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center; /* 세로 중앙 정렬 */
+        justify-content: center;
         height: 100vh;
         width: 100vw;
         margin: 0;
@@ -32,8 +32,8 @@
         background: #533b4d;
         color: white;
         font-family: 'NanumSquare', Arial, sans-serif;
-        position: relative; /* 배경 원 절대 위치 기준 */
-        overflow: hidden; /* 원이 삐져나가는 것 숨김 */
+        position: relative;
+        overflow: hidden;
       }
 
       .content-wrapper {
@@ -67,7 +67,6 @@
         pointer-events: none;
       }
 
-      /* 왼쪽 아래 원: 1.3배, rgba(250, 227, 198) */
       body::before {
         width: 520px;
         height: 520px;
@@ -80,7 +79,6 @@
         );
       }
 
-      /* 오른쪽 위 원: 1.8배, #faa4bd */
       body::after {
         width: 720px;
         height: 720px;
@@ -107,7 +105,7 @@
       }
 
       .top-text1 {
-        margin-top: 10px; /* 👈 이 줄 추가 */
+        margin-top: 10px;
         margin-bottom: 0px;
       }
 
@@ -154,7 +152,6 @@
         animation: float 6s ease-in-out infinite;
       }
 
-      /* 이미지 개별 위치 조정 */
       .balloon {
         width: 156px; /* 120 * 1.3 */
         top: 10%;
@@ -190,7 +187,6 @@
         animation-delay: 4s;
       }
 
-      /* 둥실둥실 떠다니는 애니메이션 */
       @keyframes float {
         0% {
           transform: translateY(0px);
@@ -211,7 +207,7 @@
         height: 100%;
         pointer-events: none;
         overflow: hidden;
-        z-index: 1; /* content-wrapper 위, 이미지 아래 */
+        z-index: 1;
       }
 
       .star {
@@ -279,7 +275,6 @@
         }
       }
 
-      /* 반응형 작업 시작 */
       @media (max-width: 768px) {
         .content-wrapper {
           padding: 16px;
@@ -385,7 +380,6 @@
           opacity: 0.6;
         }
       }
-      /* 반응형 작업 끝 */
     </style>
   </head>
   <body>
@@ -393,7 +387,7 @@
       <div class="top-text1">작은 거인님, 07월 29일</div>
       <div class="top-text2">4주년을 축하해요.</div>
 
-      <img class="middle-img" src="images/cake.png" alt="케이크 이미지" />
+      <img class="middle-img" src="images/cake.png" alt="케이크 이미지" >
 
       <div class="bottom-text1">소중한 이들을 떠올리며</div>
       <div class="bottom-text2">아래 버튼을 눌러 주세요.</div>
@@ -401,13 +395,12 @@
       <button onclick="goToMain()">편지 보러 가기</button>
     </div>
 
-    <!-- body 안에 추가 -->
     <div class="background-images">
-      <img src="images/balloon.png" class="bg-img balloon" alt="balloon" />
-      <img src="images/heart1.png" class="bg-img heart heart1" alt="heart1" />
-      <img src="images/heart2.png" class="bg-img heart heart2" alt="heart2" />
-      <img src="images/heart3.png" class="bg-img heart heart3" alt="heart3" />
-      <img src="images/heart4.png" class="bg-img heart heart4" alt="heart4" />
+      <img src="images/balloon.png" class="bg-img balloon" alt="balloon" >
+      <img src="images/heart1.png" class="bg-img heart heart1" alt="heart1" >
+      <img src="images/heart2.png" class="bg-img heart heart2" alt="heart2" >
+      <img src="images/heart3.png" class="bg-img heart heart3" alt="heart3" >
+      <img src="images/heart4.png" class="bg-img heart heart4" alt="heart4" >
     </div>
 
     <script>
@@ -422,7 +415,6 @@
       }
     </script>
   </body>
-  <!-- 별똥별 배경 -->
   <div class="shooting-stars">
     <div class="star pink small"></div>
     <div class="star rose medium"></div>
@@ -434,3 +426,4 @@
     <div class="star rose medium"></div>
   </div>
 </html>
+
